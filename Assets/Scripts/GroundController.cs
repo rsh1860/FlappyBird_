@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GroundController : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    public GameManager gameManager;
+
+    public float moveSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,9 @@ public class GroundController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.isBirdDead)
+            return;
+
         MoveGround();
     }
 
